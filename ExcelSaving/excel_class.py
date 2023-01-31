@@ -1,11 +1,11 @@
 import csv
 import os
-class ExcelStudent:
+class ExcelStudend:
 
 
-    def __init__(self, fullname: str, age: int,
+    def __init__(self, fullname: str, age: int, gender: str,
                  school: str, phone_number: str, photo: str, email: str, family: str, mom_number: str,
-                 dad_number: str, mom_work: str, dad_work: str, floor: str, group: str):
+                 dad_number: str, work: str, group: str):
         '''
         Иницилизация класса
         :param fullname: str
@@ -17,9 +17,8 @@ class ExcelStudent:
         :param family: str
         :param mom_number: str
         :param dad_number: str
-        :param mom_work: str
-        :param dad_work: str
-        :param floor: str
+        :param work: str
+        :param gender: str
         :param group: str
         '''
         self.fullname = fullname
@@ -31,9 +30,8 @@ class ExcelStudent:
         self.family = family
         self.mom_number = mom_number
         self.dad_number = dad_number
-        self.mom_work = mom_work
-        self.dad_work = dad_work
-        self.floor = floor
+        self.work = work
+        self.gender = gender
         self.group = group
 
 
@@ -52,8 +50,7 @@ class ExcelStudent:
         Состав семьи
         Мамин номер телефона
         Папин номер телефона
-        Работа мамы
-        Работа папы
+        Работа
         Пол
         Группа
         '''
@@ -65,8 +62,8 @@ class ExcelStudent:
         :return:
         '''
         if os.stat("data/students.csv").st_size == 0:
-            ExcelStudent.add_columns_name(self)
-        ExcelStudent.add_main_information(self)
+            ExcelStudend.add_columns_name(self)
+        ExcelStudend.add_main_information(self)
 
 
     def add_main_information(self):
@@ -76,8 +73,8 @@ class ExcelStudent:
         '''
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
-            writer.writerow([self.fullname, self.age, self.school, self.phone_number, self.photo, self.email,
-                             self.family, self.mom_number, self.dad_number, self.mom_work, self.dad_work, self.floor,
+            writer.writerow([self.fullname, self.age, self.work, self.school, self.phone_number, self.photo, self.email,
+                             self.family, self.mom_number, self.dad_number, self.gender,
                              self.group])
 
 
@@ -88,8 +85,8 @@ class ExcelStudent:
         '''
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
-            writer.writerow(["Full name", "Age", "School", "Mobile phone", "Path to photo", "Email",
-                             "Family","Mom's number", "Dad's number", "Mom's work", "Dad's work", "Floor", "Group"])
+            writer.writerow(["Full name", "Age", "Gender", "School", "Mobile phone", "Path to photo", "Email",
+                             "Family", "Mom's number", "Dad's number", "Work", "Group"])
 
 
-ExcelStudent('gghj', 2, 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj').run()
+ExcelStudend('gghj', 2, 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj').run()

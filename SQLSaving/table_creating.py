@@ -8,8 +8,7 @@ class table:
                     Id integer PRIMARY KEY AUTOINCREMENT,
                     "fullname" nvachar(30),
                     "age" integer,
-                    "sex" nvarchar(10),
-                    "group" nvarchar(10),
+                    "gender" nvarchar(10),
                     "school" nvarchar(30),
                     "mobile phone" varchar(15),
                     "photo" nvarchar(300),
@@ -17,7 +16,8 @@ class table:
                     "family" varchar(15),
                     "mobile of mother" varchar(15),
                     "mobile of father" varchar(15),
-                    "parents working place" nvarchar(150)
+                    "parents working place" nvarchar(150),
+                    "group" nvarchar(10)
                     )
                 '''
         self._table_open(query)
