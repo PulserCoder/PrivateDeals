@@ -61,7 +61,7 @@ class ExcelStudend:
         Главная функция посредством котоорой запускаеться весь класс
         :return:
         '''
-        if os.stat("data/students.csv").st_size == 0:
+        if os.stat("/Users/pavelkuzmin/PycharmProjects/PrivateDeals/ExcelSaving/data/students.csv").st_size == 0:
             ExcelStudend.add_columns_name(self)
         ExcelStudend.add_main_information(self)
 
@@ -71,7 +71,7 @@ class ExcelStudend:
         Записывает/дозаписывает в данные в таблицу
         :return:
         '''
-        with open('data/students.csv', 'a', newline='') as file:
+        with open('/Users/pavelkuzmin/PycharmProjects/PrivateDeals/ExcelSaving/data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
             writer.writerow([self.fullname, self.age, self.work, self.school, self.phone_number, self.photo, self.email,
                              self.family, self.mom_number, self.dad_number, self.gender,
@@ -83,7 +83,7 @@ class ExcelStudend:
         Добавление названий таблицы
         :return:
         '''
-        with open('data/students.csv', 'a', newline='') as file:
+        with open('/Users/pavelkuzmin/PycharmProjects/PrivateDeals/ExcelSaving/data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
             writer.writerow(["Full name", "Age", "Gender", "School", "Mobile phone", "Path to photo", "Email",
                              "Family", "Mom's number", "Dad's number", "Work", "Group"])
