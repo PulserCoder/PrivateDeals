@@ -85,8 +85,8 @@ class ExcelStudend:
         '''
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
-            writer.writerow(["Full name", "Age", "Sex", "School", "Mobile phone", "Path to photo", "Email",
-                             "Family","Mom's number", "Dad's number", "Work", "Group"])
+            writer.writerow(["Full name", "Age", "Gender", "School", "Mobile phone", "Path to photo", "Email",
+                             "Family", "Mom's number", "Dad's number", "Work", "Group"])
 
 
 ExcelStudend('gghj', 2, 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj').run()
