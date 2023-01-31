@@ -29,5 +29,3 @@ class table:
                 cursor.execute(query)
             else:
                 cursor.execute(query, arguments)
-
-
