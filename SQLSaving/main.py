@@ -18,6 +18,10 @@ class PushingInDataBase(table_data_edit, table_caolumn_edit):
         self.dad_number = dad_number
         self.work = work
         self.group = group
+        self.data_edit_add(("fullname", "age", "gender", "school", "mobile phone", "photo", "email", "family",
+                            "mobile of mother", "mobile of father", "parents working place", "group"), (
+                           fullname, age, gender, school, phone_number, photo, email, family, mom_number, dad_number,
+                           work, group))
 
     def column_edit_drop(self, column_name):
         self.column_drop(column_name)
