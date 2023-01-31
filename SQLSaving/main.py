@@ -1,12 +1,14 @@
 from table_column_edit import table_caolumn_edit
 from table_data_edit import table_data_edit
 
+
 class PushingInDataBase(table_data_edit, table_caolumn_edit):
-    def __init__(self, fullname: str, age: int,
+    def __init__(self, fullname: str, age: int, gender: str,
                  school: str, phone_number: str, photo: str, email: str, family: str, mom_number: str,
-                 dad_number: str, mom_work: str, dad_work: str):
+                 dad_number: str, work: str, group: str):
         self.fullname = fullname
         self.age = age
+        self.gender = gender
         self.school = school
         self.phone_number = phone_number
         self.photo = photo
@@ -14,9 +16,8 @@ class PushingInDataBase(table_data_edit, table_caolumn_edit):
         self.family = family
         self.mom_number = mom_number
         self.dad_number = dad_number
-        self.mom_work = mom_work
-        self.dad_work = dad_work
-        self.data_edit_add()
+        self.work = work
+        self.group = group
 
     def column_edit_drop(self, column_name):
         self.column_drop(column_name)
