@@ -1,11 +1,11 @@
 import csv
 import os
-class ExcelStudend:
+class ExcelStudent:
 
 
-    def __init__(self, fullname: str, age: int,
+    def __init__(self, fullname: str, age: int, gender: str,
                  school: str, phone_number: str, photo: str, email: str, family: str, mom_number: str,
-                 dad_number: str, work: str, floor: str, group: str):
+                 dad_number: str, work: str, group: str):
         '''
         Иницилизация класса
         :param fullname: str
@@ -18,7 +18,7 @@ class ExcelStudend:
         :param mom_number: str
         :param dad_number: str
         :param work: str
-        :param floor: str
+        :param gender: str
         :param group: str
         '''
         self.fullname = fullname
@@ -31,7 +31,7 @@ class ExcelStudend:
         self.mom_number = mom_number
         self.dad_number = dad_number
         self.work = work
-        self.floor = floor
+        self.gender = gender
         self.group = group
 
 
@@ -62,8 +62,8 @@ class ExcelStudend:
         :return:
         '''
         if os.stat("data/students.csv").st_size == 0:
-            ExcelStudend.add_columns_name(self)
-        ExcelStudend.add_main_information(self)
+            ExcelStudent.add_columns_name(self)
+        ExcelStudent.add_main_information(self)
 
 
     def add_main_information(self):
@@ -74,7 +74,7 @@ class ExcelStudend:
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
             writer.writerow([self.fullname, self.age, self.work, self.school, self.phone_number, self.photo, self.email,
-                             self.family, self.mom_number, self.dad_number, self.floor,
+                             self.family, self.mom_number, self.dad_number, self.gender,
                              self.group])
 
 
