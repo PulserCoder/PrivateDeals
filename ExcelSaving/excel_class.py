@@ -73,8 +73,8 @@ class ExcelStudend:
         '''
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
-            writer.writerow([self.fullname, self.age, self.school, self.phone_number, self.photo, self.email,
-                             self.family, self.mom_number, self.dad_number, self.work, self.floor,
+            writer.writerow([self.fullname, self.age, self.work, self.school, self.phone_number, self.photo, self.email,
+                             self.family, self.mom_number, self.dad_number, self.floor,
                              self.group])
 
 
@@ -85,8 +85,8 @@ class ExcelStudend:
         '''
         with open('data/students.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=',')
-            writer.writerow(["Full name", "Age", "School", "Mobile phone", "Path to photo", "Email",
-                             "Family","Mom's number", "Dad's number", "Work", "Sex", "Group"])
+            writer.writerow(["Full name", "Age", "Sex", "School", "Mobile phone", "Path to photo", "Email",
+                             "Family","Mom's number", "Dad's number", "Work", "Group"])
 
 
 ExcelStudend('gghj', 2, 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj', 'gghj').run()
