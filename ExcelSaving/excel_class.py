@@ -1,6 +1,6 @@
 import csv
 import os
-class ExcelStudend:
+class ExcelStudent:
 
 
     def __init__(self, fullname: str, age: int, gender: str,
@@ -62,8 +62,8 @@ class ExcelStudend:
         :return:
         '''
         if os.stat("data/students.csv").st_size == 0:
-            ExcelStudend.add_columns_name(self)
-        ExcelStudend.add_main_information(self)
+            ExcelStudent.add_columns_name(self)
+        ExcelStudent.add_main_information(self)
 
 
     def add_main_information(self):
