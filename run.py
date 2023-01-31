@@ -44,7 +44,7 @@ class MainForm(QMainWindow):
         self.place_jobs.setText('')
 
 
-        self.save_data_in_excel(name, age, textschool, number, fname, email, member, number_mother, number_father, place_jobs, place_jobs, text_gender, 'ИТ-21')
+        self.save_data_in_excel(name, age, text_gender, textschool, number, fname, email, member, number_mother, number_father, place_jobs, place_jobs, 'ИТ-21')
 
     def take_image_from_user(self):
         global fname
@@ -57,8 +57,8 @@ class MainForm(QMainWindow):
 
     def save_data_in_excel(self, fullname: str, age: int,
                  school: str, phone_number: str, photo: str, email: str, family: str, mom_number: str,
-                 dad_number: str, mom_work: str, dad_work: str, floor: str, group: str):
-        excel = ExcelStudent(fullname, age, school, phone_number, photo, email, family, mom_number, dad_number, mom_work, dad_work, floor, group).run()
+                 dad_number: str, mom_work: str, dad_work: str,  group: str):
+        excel = ExcelStudent(fullname, age, gender, school, phone_number, photo, email, family, mom_number, dad_number, mom_work, dad_work, group).run()
 
     # def save_data_in_files(self, fullname: str, age: int,
     #              school: str, phone_number: str, photo: str, email: str, family: str, mom_number: str,
